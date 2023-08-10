@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -13,7 +14,6 @@ class TimerPage extends StatefulWidget {
 class TimerPageState extends State<TimerPage>
     with TickerProviderStateMixin {
   late AnimationController controller;
-
   bool isPlaying = false;
 
   String get countText {
@@ -24,14 +24,15 @@ class TimerPageState extends State<TimerPage>
   }
 
   double progress = 1.0;
-
+  final player = AudioPlayer();
 
   @override
   void initState() {
     super.initState();
+    player.setSource(AssetSource('music.mp3'));
     controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 60),
+      duration: const Duration(seconds: 300),
     );
 
     controller.addListener(() {
@@ -50,6 +51,7 @@ class TimerPageState extends State<TimerPage>
 
   @override
   void dispose() {
+    player.dispose();
     controller.dispose();
     super.dispose();
   }
@@ -61,7 +63,7 @@ class TimerPageState extends State<TimerPage>
         title: const Text('Meditation Timer'),
         backgroundColor: const Color(0xFFFFCACC),
       ),
-      backgroundColor: Color.fromARGB(255, 236, 239, 236),
+      backgroundColor: const Color.fromARGB(255, 236, 239, 236),
       body: Column(
         children: [
           
@@ -74,17 +76,18 @@ class TimerPageState extends State<TimerPage>
                   height: 300,
                   child: CircularProgressIndicator(
                     color: const Color(0xFFFFCACC),
-                    backgroundColor: Color.fromRGBO(250, 243, 240, 1),
+                    backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
                     value: progress,
                     strokeWidth: 6,
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
+
                     if (controller.isDismissed) {
                       showModalBottomSheet(
                         context: context,
-                        builder: (context) => Container(
+                        builder: (context) => SizedBox(
                           height: 300,
                           child: CupertinoTimerPicker(
                             initialTimerDuration: controller.duration!,
@@ -102,7 +105,7 @@ class TimerPageState extends State<TimerPage>
                     animation: controller,
                     builder: (context, child) => Text(
                       countText,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 60,
                         fontWeight: FontWeight.bold,
                       ),
@@ -120,11 +123,13 @@ class TimerPageState extends State<TimerPage>
                 GestureDetector(
                   onTap: () {
                     if (controller.isAnimating) {
+                      player.pause();
                       controller.stop();
                       setState(() {
                         isPlaying = false;
                       });
                     } else {
+                      player.resume();
                       controller.reverse(
                           from: controller.value == 0 ? 1.0 : controller.value);
                       setState(() {
@@ -138,12 +143,13 @@ class TimerPageState extends State<TimerPage>
                 ),
                 GestureDetector(
                   onTap: () {
+                    player.pause();
                     controller.reset();
                     setState(() {
                       isPlaying = false;
                     });
                   },
-                  child: RoundButton(
+                  child: const RoundButton(
                     icon: Icons.stop,
                   ),
                 ),
@@ -175,7 +181,7 @@ class RoundButton extends StatelessWidget {
         child: Icon(
           icon,
           size: 36,
-          color: Color.fromRGBO(250, 243, 240, 1),
+          color: const Color.fromRGBO(250, 243, 240, 1),
         ),
       ),
     );

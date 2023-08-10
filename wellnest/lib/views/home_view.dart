@@ -108,7 +108,7 @@ class _HomeViewState extends State<HomeView> {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context)
-                            .pushNamed('/timer/');
+                            .pushNamed('/options/');
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
@@ -211,8 +211,7 @@ class _HomeViewState extends State<HomeView> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: IconButton(
                   onPressed: () {
-                    Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/home/', (_) => false);
+                    
                   },
                   icon: const Icon(
                     Icons.home,

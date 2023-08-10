@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:wellnest/views/breathing_view.dart';
+import './views/options_view.dart';
 import './views/login_view.dart';
 import './views/home_view.dart';
 import './views/meditation_view.dart';
@@ -11,7 +13,6 @@ import 'views/verify_email_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-
   runApp(MaterialApp(
     title: 'Flutter Demo',
     theme: ThemeData(
@@ -26,6 +27,8 @@ void main() {
       '/verify/': (context) => const VerifyEmailView(),
       '/setup/': (context) => const SetupView(),
       '/timer/': (context) => const TimerPage(),
+      '/options/':(context) => const OptionsView(),
+      '/breathing/':(context) => const BreathingView(),
     },
   ));
 }
@@ -54,7 +57,7 @@ class HomePage extends StatelessWidget {
               }
 
             default:
-              return const CircularProgressIndicator();
+              return const Scaffold(body: Center(child: CircularProgressIndicator(),),);
           }
         });
   }
