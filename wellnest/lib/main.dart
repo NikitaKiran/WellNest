@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wellnest/views/breathing_view.dart';
+import 'package:wellnest/views/landing_view.dart';
 import './views/options_view.dart';
 import './views/login_view.dart';
 import './views/home_view.dart';
@@ -11,6 +12,7 @@ import './views/setup_view.dart';
 import 'firebase_options.dart';
 import 'views/verify_email_view.dart';
 
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MaterialApp(
@@ -19,8 +21,9 @@ void main() {
       colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFFCACC)),
       useMaterial3: true,
     ),
-    home: const HomePage(),
+    home: const LandingView(),
     routes: {
+      '/start/':(context) => const HomePage(),
       '/login/': (context) => const LoginView(),
       '/register/': (context) => const RegisterView(),
       '/home/': (context) => const HomeView(),
@@ -29,6 +32,7 @@ void main() {
       '/timer/': (context) => const TimerPage(),
       '/options/':(context) => const OptionsView(),
       '/breathing/':(context) => const BreathingView(),
+      '/landing/' :(context) => const LandingView(),
     },
   ));
 }

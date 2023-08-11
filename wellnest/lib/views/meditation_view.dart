@@ -144,6 +144,7 @@ class TimerPageState extends State<TimerPage>
                 GestureDetector(
                   onTap: () {
                     player.pause();
+                    player.seek(const Duration(seconds: 0));
                     controller.reset();
                     setState(() {
                       isPlaying = false;
