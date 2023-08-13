@@ -1,40 +1,41 @@
+import 'dart:async';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-
-class BreathingView extends StatefulWidget {
-  const BreathingView({super.key});
+class Breathing478View extends StatefulWidget {
+  const Breathing478View({super.key});
 
   @override
-  State<BreathingView> createState() => _BreathingViewState();
+  State<Breathing478View> createState() => _Breathing478ViewState();
 }
 
-class _BreathingViewState extends State<BreathingView>
-    with TickerProviderStateMixin {
+class _Breathing478ViewState extends State<Breathing478View> with TickerProviderStateMixin{
   late AnimationController _breathingController;
   var _breathe = 0.0;
   var _displaytext = "Breathe In";
   bool isPlaying = false;
   final player = AudioPlayer();
-
+  late Timer t;
   @override
   void initState() {
     super.initState();
     player.setSource(AssetSource('music.mp3'));
     _breathingController =
-        AnimationController(vsync: this, duration: const Duration(seconds: 5));
+        AnimationController(vsync: this, duration: const Duration(seconds: 4),reverseDuration: const Duration(seconds: 8));
     _breathingController.addStatusListener((status) {
       if (status == AnimationStatus.completed && isPlaying) {
-        _breathingController.reverse(from: 1);
-        _displaytext = "Breathe Out";
-      } else if (status == AnimationStatus.dismissed && isPlaying) {
         _displaytext = "Hold";
-        Future.delayed(const Duration(seconds: 5), () {
+        t = Timer(const Duration(seconds: 7), () {
           if (isPlaying) {
+             _breathingController.reverse(from: 1);
+             _displaytext = "Breathe Out";
+          }});
+       
+      } else if (status == AnimationStatus.dismissed && isPlaying) {
             _breathingController.forward(from: 0);
             _displaytext = "Breathe In";
-          }
-        });
+          
+        
       }
     });
 
@@ -47,6 +48,9 @@ class _BreathingViewState extends State<BreathingView>
 
   @override
   void dispose() {
+    if (!_breathingController.isAnimating && isPlaying){
+      t.cancel();
+    }
     player.dispose();
     _breathingController.dispose();
     super.dispose();
@@ -57,7 +61,7 @@ class _BreathingViewState extends State<BreathingView>
     final size = 200.0 + 100.0 * _breathe;
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Guided Breathing'),
+          title: const Text('4-7-8 Breathing'),
           backgroundColor: const Color(0xFFFFCACC),
         ),
         backgroundColor: const Color.fromARGB(255, 236, 239, 236),
@@ -83,23 +87,34 @@ class _BreathingViewState extends State<BreathingView>
                 children: [
                   GestureDetector(
                     onTap: () {
-                      
-                      if (isPlaying) {
-                        player.pause();
+                      if (_breathingController.isAnimating){
                         setState(() {
-                          _displaytext = "Breathe In";
                           isPlaying = false;
-                        });
-
-                        _breathingController.reset();
-                      } else {
-                        player.resume();
-                        _breathingController.forward(from: 0);
-                        setState(() {
                           _displaytext = "Breathe In";
-                          isPlaying = true;
                         });
+                        _breathingController.reset();
+                        player.pause();
+                        
                       }
+                      else{
+                        if (!isPlaying){
+                          player.resume();
+                          _breathingController.forward(from: 0);
+                          setState(() {
+                            isPlaying = true;
+                          });
+                        } else{
+                          setState(() {
+                          isPlaying = false;
+                          _displaytext = "Breathe In";
+                        });
+                          t.cancel();
+                          _breathingController.reset();
+                        player.pause();
+                        
+                        }
+                      }
+                      
                     },
                     child: RoundButton(
                       icon: isPlaying == true ? Icons.stop : Icons.play_arrow,
@@ -138,3 +153,7 @@ class RoundButton extends StatelessWidget {
     );
   }
 }
+
+
+
+

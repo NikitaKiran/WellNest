@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class OptionsView extends StatelessWidget {
@@ -30,10 +29,30 @@ class OptionsView extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context)
-                            .pushNamed('/breathing/');
+                            .pushNamed('/box_breathing/');
                 },
                 
-                child: const Center(child: Text("Guided Breathing", style: TextStyle(fontSize: 20),)),
+                child: const Center(child: Text("Box Breathing", style: TextStyle(fontSize: 20),)),
+              )),
+              Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context)
+                            .pushNamed('/478_breathing/');
+                },
+                
+                child: const Center(child: Text("4-7-8 Breathing", style: TextStyle(fontSize: 20),)),
+              )),
+              Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context)
+                            .pushNamed('/custom_breathing/');
+                },
+                
+                child: const Center(child: Text("Custom Breathing", style: TextStyle(fontSize: 20),)),
               ))
         ],
       ),

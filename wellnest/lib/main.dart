@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:wellnest/views/breathing_view.dart';
+import 'package:wellnest/views/4_7_8_breathing_view.dart';
+import 'package:wellnest/views/box_breathing_view.dart';
+import 'package:wellnest/views/custom_breathing_view.dart';
 import 'package:wellnest/views/landing_view.dart';
 import './views/options_view.dart';
 import './views/login_view.dart';
@@ -16,6 +18,7 @@ import 'views/verify_email_view.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: 'Flutter Demo',
     theme: ThemeData(
       colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFFFCACC)),
@@ -31,7 +34,9 @@ void main() {
       '/setup/': (context) => const SetupView(),
       '/timer/': (context) => const TimerPage(),
       '/options/':(context) => const OptionsView(),
-      '/breathing/':(context) => const BreathingView(),
+      '/box_breathing/':(context) => const BoxBreathingView(),
+      '/478_breathing/':(context) => const Breathing478View(),
+      '/custom_breathing/':(context) => const SelectCustomization(),
       '/landing/' :(context) => const LandingView(),
     },
   ));
