@@ -34,6 +34,7 @@ class _TTTPageState extends State<TTTPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xFFFFCACC),
         title: const Text("Tic Tac Toe"),
         actions: [
           IconButton(
@@ -82,14 +83,21 @@ class _TTTPageState extends State<TTTPage> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text(
-          "$currentPlayer's turn",
-          style: const TextStyle(
-            color: Colors.green,
-            fontSize: 32,
+        currentPlayer == PLAYER_X ? const Text(
+          "Your turn",
+          style: TextStyle(
+            color: Colors.blueGrey,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
-        ),
+        ) : const Text(
+          "Computer's turn",
+          style: TextStyle(
+            color: Colors.blueGrey,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
+        )
       ],
     );
   }
@@ -114,7 +122,7 @@ class _TTTPageState extends State<TTTPage> {
   Widget _box(int index) {
     return InkWell(
       onTap: () {
-        if (gameEnd || occupied[index].isNotEmpty) {
+        if (gameEnd || occupied[index].isNotEmpty || currentPlayer == PLAYER_O) {
           return;
         }
         setState(() {
@@ -124,7 +132,10 @@ class _TTTPageState extends State<TTTPage> {
           if (!gameEnd) {
             changeTurn();
             if (currentPlayer == PLAYER_O && (isHardMode || !isHardMode)) {
-              _makeComputerMove();
+              Future.delayed(const Duration(seconds: 1), () {
+      _makeComputerMove();
+    });
+              
             }
           }
         });
@@ -133,13 +144,13 @@ class _TTTPageState extends State<TTTPage> {
         color: occupied[index].isEmpty
             ? Colors.black12
             : occupied[index] == PLAYER_X
-                ? Colors.purple
-                : Colors.blue,
+                ? Colors.red.shade100
+                : Colors.blue.shade100,
         margin: const EdgeInsets.all(8),
         child: Center(
           child: Text(
             occupied[index],
-            style: const TextStyle(fontSize: 50),
+            style: const TextStyle(fontSize: 20),
           ),
         ),
       ),
@@ -170,7 +181,13 @@ class _TTTPageState extends State<TTTPage> {
       if (playerPosition0.isNotEmpty &&
           playerPosition0 == playerPosition1 &&
           playerPosition0 == playerPosition2) {
-        showGameOverMessage("Player $playerPosition0 Won");
+            if (playerPosition1 == PLAYER_X){
+              showGameOverMessage("You Won");
+            }
+            else{
+              showGameOverMessage("Computer Won");
+            }
+        
         gameEnd = true;
         break;
       }
@@ -187,11 +204,12 @@ class _TTTPageState extends State<TTTPage> {
   void showGameOverMessage(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.green.shade100,
         content: Text(
           "Game Over\n$message",
           textAlign: TextAlign.center,
           style: const TextStyle(
+            color: Colors.black,
             fontSize: 20,
           ),
         ),

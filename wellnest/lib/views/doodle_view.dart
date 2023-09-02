@@ -13,12 +13,12 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
     Colors.white,
     Colors.black,
     Colors.grey,
-    Color.fromARGB(255, 222, 180, 110),
-    Color.fromARGB(255, 235, 200, 120),
-    Color.fromARGB(255, 125, 180, 225),
-    Color.fromARGB(255, 165, 90, 180),
-    Color.fromARGB(255, 105, 180, 110),
-    Color.fromARGB(255, 190, 130, 110),
+    const Color.fromARGB(255, 222, 180, 110),
+    const Color.fromARGB(255, 235, 200, 120),
+    const Color.fromARGB(255, 125, 180, 225),
+    const Color.fromARGB(255, 165, 90, 180),
+    const Color.fromARGB(255, 105, 180, 110),
+    const Color.fromARGB(255, 190, 130, 110),
   ];
 
   var historyDrawingPoints = <DrawingPoint>[];
@@ -131,9 +131,9 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
                 value: selectedWidth,
                 min: 1,
                 max: 20,
-                activeColor: Color.fromRGBO(221, 187, 204, 1),
-                inactiveColor: Color.fromARGB(255, 225, 221, 223),
-                thumbColor: Color.fromRGBO(221, 187, 204, 1),
+                activeColor: const Color.fromRGBO(221, 187, 204, 1),
+                inactiveColor: const Color.fromARGB(255, 225, 221, 223),
+                thumbColor: const Color.fromRGBO(221, 187, 204, 1),
                 onChanged: (value) {
                   setState(() {
                     selectedWidth = value;
@@ -149,8 +149,8 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
         children: [
           FloatingActionButton(
             heroTag: "Undo",
-            backgroundColor: Color.fromRGBO(221, 187, 204, 1),
-            foregroundColor: Color.fromARGB(255, 60, 60, 60),
+            backgroundColor: const Color.fromRGBO(221, 187, 204, 1),
+            foregroundColor: const Color.fromARGB(255, 60, 60, 60),
             onPressed: () {
               if (drawingPoints.isNotEmpty && historyDrawingPoints.isNotEmpty) {
                 setState(() {
@@ -163,8 +163,8 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
           const SizedBox(width: 16),
           FloatingActionButton(
             heroTag: "Redo",
-            backgroundColor: Color.fromRGBO(221, 187, 204, 1),
-            foregroundColor: Color.fromARGB(255, 60, 60, 60),
+            backgroundColor: const Color.fromRGBO(221, 187, 204, 1),
+            foregroundColor: const Color.fromARGB(255, 60, 60, 60),
             onPressed: () {
               setState(() {
                 if (drawingPoints.length < historyDrawingPoints.length) {
