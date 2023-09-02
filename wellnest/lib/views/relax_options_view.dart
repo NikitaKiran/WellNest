@@ -39,7 +39,7 @@ class RelaxOptionsView extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context)
-                            .pushNamed('/478_breathing/');
+                            .pushNamed('/doodle/');
                 },
                 
                 child: const Center(child: Text("Doodle", style: TextStyle(fontSize: 20),)),

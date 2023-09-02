@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wellnest/views/4_7_8_breathing_view.dart';
 import 'package:wellnest/views/box_breathing_view.dart';
 import 'package:wellnest/views/custom_breathing_view.dart';
+import 'package:wellnest/views/doodle_view.dart';
 import 'package:wellnest/views/gol_view.dart';
 import 'package:wellnest/views/landing_view.dart';
 import 'package:wellnest/views/note_view.dart';
@@ -46,6 +47,7 @@ void main() {
       '/relax/' : (context) => const RelaxOptionsView(),
       '/gol/' : (context) => const GameView(),
       '/ttt/' : (context) => const TTTPage(),
+      '/doodle/' : (context) => const DrawingRoomScreen(),
     },
   ));
 }
