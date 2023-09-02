@@ -5,6 +5,7 @@ import 'package:wellnest/views/4_7_8_breathing_view.dart';
 import 'package:wellnest/views/box_breathing_view.dart';
 import 'package:wellnest/views/custom_breathing_view.dart';
 import 'package:wellnest/views/landing_view.dart';
+import 'package:wellnest/views/note_view.dart';
 import './views/options_view.dart';
 import './views/login_view.dart';
 import './views/home_view.dart';
@@ -38,6 +39,7 @@ void main() {
       '/478_breathing/':(context) => const Breathing478View(),
       '/custom_breathing/':(context) => const SelectCustomization(),
       '/landing/' :(context) => const LandingView(),
+      '/notes/' :(context) => const NotesView(),
     },
   ));
 }
