@@ -175,7 +175,10 @@ class _HomeViewState extends State<HomeView> {
                     width: 150.0,
                     height: 150.0,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/affirm/');
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
                         elevation: 2.0,

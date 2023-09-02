@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wellnest/views/4_7_8_breathing_view.dart';
+import 'package:wellnest/views/affirm_view.dart';
 import 'package:wellnest/views/box_breathing_view.dart';
 import 'package:wellnest/views/custom_breathing_view.dart';
 import 'package:wellnest/views/doodle_view.dart';
@@ -48,6 +49,7 @@ void main() {
       '/gol/' : (context) => const GameView(),
       '/ttt/' : (context) => const TTTPage(),
       '/doodle/' : (context) => const DrawingRoomScreen(),
+      '/affirm/' : (context) => const AffirmPage(),
     },
   ));
 }
