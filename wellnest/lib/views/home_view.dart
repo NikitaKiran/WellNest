@@ -142,7 +142,10 @@ class _HomeViewState extends State<HomeView> {
                     width: 150.0,
                     height: 150.0,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/relax/');
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(221, 187, 204, 1),
                         elevation: 2.0,
