@@ -43,6 +43,7 @@ dependencies:
   google_fonts: 
   intl:
   http: ^1.1.0
+  collection:
 
 dev_dependencies:
   flutter_test:
