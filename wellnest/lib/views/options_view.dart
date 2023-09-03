@@ -52,7 +52,7 @@ class OptionsView extends StatelessWidget {
                             .pushNamed('/custom_breathing/');
                 },
                 
-                child: const Center(child: Text("Custom Breathing", style: TextStyle(fontSize: 20),)),
+                child: const Center(child: Text("Custom Breathwork", style: TextStyle(fontSize: 20),)),
               ))
         ],
       ),

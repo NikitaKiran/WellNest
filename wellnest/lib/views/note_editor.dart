@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:wellnest/style/app_style.dart';
@@ -14,6 +15,7 @@ class NoteEditorScreen extends StatefulWidget {
 }
 
 class _NoteEditorScreenState extends State<NoteEditorScreen> {
+  final user = FirebaseAuth.instance.currentUser;
   int colourID = Random().nextInt(AppStyle.cardsColor.length);
   String date = DateFormat('dd-MM-yyyy kk:mm').format(DateTime.now());
   final TextEditingController _titleController = TextEditingController();
@@ -37,7 +39,7 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
                 controller: _titleController,
                 decoration: const InputDecoration(
                   border: InputBorder.none,
-                      hintText: 'Note Title;'
+                      hintText: 'Note Title'
                 ),
                 style: AppStyle.mainTitle,
               ),
@@ -65,7 +67,8 @@ class _NoteEditorScreenState extends State<NoteEditorScreen> {
             "note_title": _titleController.text,
             "creation_date":date,
             "note_content":_mainController.text,
-            "color_id":colourID
+            "color_id":colourID,
+            "UID": user?.uid,
           }).then<void> ((value) {
             Navigator.pop(context);
           }).catchError((error) =>  showErrorDialogue(context, error));
