@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -5,6 +7,7 @@ import 'package:wellnest/views/4_7_8_breathing_view.dart';
 import 'package:wellnest/views/affirm_view.dart';
 import 'package:wellnest/views/box_breathing_view.dart';
 import 'package:wellnest/views/custom_breathing_view.dart';
+import 'package:wellnest/views/daily_quiz.dart';
 import 'package:wellnest/views/doodle_view.dart';
 import 'package:wellnest/views/gol_view.dart';
 import 'package:wellnest/views/landing_view.dart';
@@ -38,6 +41,7 @@ void main() {
       '/home/': (context) => const HomeView(),
       '/verify/': (context) => const VerifyEmailView(),
       '/setup/': (context) => const SetupView(),
+      '/daily_quiz/': (context) => const QuizScreen(),
       '/timer/': (context) => const TimerPage(),
       '/options/':(context) => const OptionsView(),
       '/box_breathing/':(context) => const BoxBreathingView(),

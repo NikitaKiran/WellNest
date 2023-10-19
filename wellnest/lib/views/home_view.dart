@@ -47,7 +47,10 @@ class _HomeViewState extends State<HomeView> {
                     width: 320.0,
                     height: 130.0,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/daily_quiz/');
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
                         elevation: 2.0,
