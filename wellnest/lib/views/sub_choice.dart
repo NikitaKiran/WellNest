@@ -26,12 +26,107 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
         fontWeight: FontWeight.bold),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-        ),
-      ),
+      
+      body: SingleChildScrollView(
+        child: SafeArea(
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Center(
+              child: Wrap(
+                spacing: 20.0,
+                runSpacing: 20.0,
+                children: [
+                  SizedBox(
+                    width: 300.0,
+                    height: 150.0,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: emotionColor,
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0)),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(55.0),
+                          child: Column(
+                            children: [
+                              const Text("Joyful",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 60, 60, 60),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 300.0,
+                    height: 150.0,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: emotionColor,
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0)),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(55.0),
+                          child: Column(
+                            children: [
+                              const Text("Love",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 60, 60, 60),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  
+                  SizedBox(
+                    width: 300.0,
+                    height: 150.0,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: emotionColor,
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0)),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(55.0),
+                          child: Column(
+                            children: [
+                              const Text("Optimistic",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 60, 60, 60),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  
+                ],
+              ),
+            ),
+          )
+        ])),
+      )
     );
   }
 }
