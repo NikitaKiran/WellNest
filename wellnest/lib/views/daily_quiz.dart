@@ -13,7 +13,9 @@ class _QuizScreenState extends State<QuizScreen>{
   List<BasicEmotions> emotions = [];
 
   String currentState = "Happy";
-  Color currentColor = Color.fromRGBO(245,245,178,1);
+  Color currentColor = const Color.fromRGBO(245,245,178,1);
+  List currentSubEmotions = ["Optimistic", "Joyful", "Love"];
+  int emotionNo = 0;
 
   @override
   void initState() {
@@ -24,10 +26,10 @@ class _QuizScreenState extends State<QuizScreen>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("How Are You Feeling Today?",
+        title: const Text("How Are You Feeling Today?",
         style: TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
         ),
-        backgroundColor: Color.fromRGBO(212, 226, 212, 1),
+        backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
       ),
       body: Stack(
         children: [
@@ -44,7 +46,7 @@ class _QuizScreenState extends State<QuizScreen>{
                   height: 65,
                   width: MediaQuery.of(context).size.width / 1.1,
                   decoration: BoxDecoration(
-                    color: Color.fromRGBO(212, 226, 212, 1),
+                    color: const Color.fromRGBO(212, 226, 212, 1),
                     borderRadius: BorderRadius.circular(6.0),
                   ),
                 ),
@@ -60,6 +62,7 @@ class _QuizScreenState extends State<QuizScreen>{
               setState(() {
                 currentState = emotions[index].names!;
                 currentColor = emotions[index].color!;
+                currentSubEmotions = emotions[index].subEmotions!;
               });
             },
             childDelegate: ListWheelChildBuilderDelegate(
@@ -76,10 +79,10 @@ class _QuizScreenState extends State<QuizScreen>{
       
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.arrow_forward),
-        backgroundColor: Color.fromRGBO(212, 226, 212, 1),
-        foregroundColor: Color.fromARGB(255, 60, 60, 60),
+        backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
+        foregroundColor: const Color.fromARGB(255, 60, 60, 60),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> SubChoiceScreen(currentState, currentColor)));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> SubChoiceScreen(currentState, currentColor, currentSubEmotions)));
         },
       ),
     );
@@ -91,15 +94,18 @@ class _QuizScreenState extends State<QuizScreen>{
 class BasicEmotions {
   String? names;
   Color? color;
+  List? subEmotions;
 
   BasicEmotions({
     this.names,
     this.color,
+    this.subEmotions,
   });
 
-  void setData(String getName, Color getColor) {
+  void setData(String getName, Color getColor, List getSubEmotions) {
     names = getName;
     color = getColor;
+    subEmotions = getSubEmotions;
   }
 
   String getName() {
@@ -112,47 +118,47 @@ List<BasicEmotions> allStates() {
   BasicEmotions statesModel = new BasicEmotions();
 
   //1
-  statesModel.setData("Happy", Color.fromRGBO(245,245,178,1));
+  statesModel.setData("Happy", Color.fromRGBO(245,245,178,1), ["Optimistic", "Joyful", "Love"]);
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //2
-  statesModel.setData("Trust", Color.fromRGBO(178,245,178,1));
+  statesModel.setData("Trust",  Color.fromRGBO(178,245,178,1), ["Grateful", "Accepted", "Helpful"]);
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //3
-  statesModel.setData("Fear", Color.fromRGBO(178,245,228,1));
+  statesModel.setData("Fear",  Color.fromRGBO(178,245,228,1), ["Callous", "Nervous", "Worried"]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //4
-  statesModel.setData("Surprise", Color.fromRGBO(178,212,245,1));
+  statesModel.setData("Surprise",  Color.fromRGBO(178,212,245,1), ["Confused", "Amused", "Dissappointed"]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //5
-  statesModel.setData("Sad", Color.fromRGBO(178,178,245,1));
+  statesModel.setData("Sad",  Color.fromRGBO(178,178,245,1), ["Lonely", "Grief", "Depressed"]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //6
-  statesModel.setData("Disgust", Color.fromRGBO(228,178,245,1));
+  statesModel.setData("Disgust",  Color.fromRGBO(228,178,245,1), ["Contempt", "Repelled", "Disapproval"]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //7
-  statesModel.setData("Anger", Color.fromRGBO(245,178,178,1));
+  statesModel.setData("Anger",  Color.fromRGBO(245,178,178,1), ["Insulted", "Mad", "Aggressive"]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //8
-  statesModel.setData("Anticipation", Color.fromRGBO(255,222,180,1));
+  statesModel.setData("Anticipation",  Color.fromRGBO(255,222,180,1), ["Excited", "Interested", "Stressed"]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
