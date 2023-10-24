@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:wellnest/views/recommend.dart';
 
-class SubChoiceScreen extends StatefulWidget {
-  final String emotion;
+class RecommendScreen extends StatefulWidget {
+  final int emotionTag;
   final Color emotionColor;
-  final List subEmotionsList;
-  final List emotionType;
-  const SubChoiceScreen(this.emotion, this.emotionColor, this.subEmotionsList, this.emotionType, {Key? key}) : super(key: key);
+  const RecommendScreen(this.emotionTag, this.emotionColor, {Key? key}) : super(key: key);
   @override
-  State<SubChoiceScreen> createState() => _SubChoiceScreenState();
+  State<RecommendScreen> createState() => _RecommendScreenState();
 }
 
-class _SubChoiceScreenState extends State<SubChoiceScreen> {
+class _RecommendScreenState extends State<RecommendScreen> {
   
   @override
   Widget build(BuildContext context) {
-    String Emotion1 = widget.subEmotionsList[0];
-    String Emotion2 = widget.subEmotionsList[1];
-    String Emotion3 = widget.subEmotionsList[2];
+    int emotionTag = widget.emotionTag;
     Color emotionColor = widget.emotionColor;
-    int Tag1 = widget.emotionType[0];
-    int Tag2 = widget.emotionType[1];
-    int Tag3 = widget.emotionType[2];
     return Scaffold(
-      backgroundColor: Color.fromRGBO(221, 226, 221, 1),
+      backgroundColor: emotionColor,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: emotionColor,
@@ -50,9 +42,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                     width: 300.0,
                     height: 150.0,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> RecommendScreen(Tag1, emotionColor)));
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: emotionColor,
                         elevation: 2.0,
@@ -64,7 +54,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                           padding: const EdgeInsets.all(55.0),
                           child: Column(
                             children: [
-                              Text(Emotion1,
+                              Text("a",
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,
@@ -79,9 +69,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                     width: 300.0,
                     height: 150.0,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> RecommendScreen(Tag2, emotionColor)));
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: emotionColor,
                         elevation: 2.0,
@@ -93,7 +81,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                           padding: const EdgeInsets.all(55.0),
                           child: Column(
                             children: [
-                              Text(Emotion2,
+                              Text("b",
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,
@@ -109,9 +97,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                     width: 300.0,
                     height: 150.0,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> RecommendScreen(Tag3, emotionColor)));
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         backgroundColor: emotionColor,
                         elevation: 2.0,
@@ -123,7 +109,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                           padding: const EdgeInsets.all(55.0),
                           child: Column(
                             children: [
-                              Text(Emotion3,
+                              Text("c",
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,

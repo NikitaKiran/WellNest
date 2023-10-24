@@ -15,6 +15,7 @@ class _QuizScreenState extends State<QuizScreen>{
   String currentState = "Happy";
   Color currentColor = const Color.fromRGBO(245,245,178,1);
   List currentSubEmotions = ["Optimistic", "Joyful", "Love"];
+  List currentTags = [1, 1, 1];
   int emotionNo = 0;
 
   @override
@@ -63,6 +64,7 @@ class _QuizScreenState extends State<QuizScreen>{
                 currentState = emotions[index].names!;
                 currentColor = emotions[index].color!;
                 currentSubEmotions = emotions[index].subEmotions!;
+                currentTags = emotions[index].tags!;
               });
             },
             childDelegate: ListWheelChildBuilderDelegate(
@@ -82,7 +84,7 @@ class _QuizScreenState extends State<QuizScreen>{
         backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
         foregroundColor: const Color.fromARGB(255, 60, 60, 60),
         onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> SubChoiceScreen(currentState, currentColor, currentSubEmotions)));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> SubChoiceScreen(currentState, currentColor, currentSubEmotions, currentTags)));
         },
       ),
     );
@@ -95,17 +97,20 @@ class BasicEmotions {
   String? names;
   Color? color;
   List? subEmotions;
+  List? tags;
 
   BasicEmotions({
     this.names,
     this.color,
     this.subEmotions,
+    this.tags,
   });
 
-  void setData(String getName, Color getColor, List getSubEmotions) {
+  void setData(String getName, Color getColor, List getSubEmotions, List getTags) {
     names = getName;
     color = getColor;
     subEmotions = getSubEmotions;
+    tags = getTags;
   }
 
   String getName() {
@@ -118,47 +123,47 @@ List<BasicEmotions> allStates() {
   BasicEmotions statesModel = new BasicEmotions();
 
   //1
-  statesModel.setData("Happy", Color.fromRGBO(245,245,178,1), ["Optimistic", "Joyful", "Love"]);
+  statesModel.setData("Happy", Color.fromRGBO(245,245,178,1), ["Optimistic", "Joyful", "Love"], [1, 1, 1]);
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //2
-  statesModel.setData("Trust",  Color.fromRGBO(178,245,178,1), ["Grateful", "Accepted", "Helpful"]);
+  statesModel.setData("Trust",  Color.fromRGBO(178,245,178,1), ["Grateful", "Accepted", "Helpful"], [1, 1, 1]);
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //3
-  statesModel.setData("Fear",  Color.fromRGBO(178,245,228,1), ["Callous", "Nervous", "Worried"]);
+  statesModel.setData("Fear",  Color.fromRGBO(178,245,228,1), ["Callous", "Nervous", "Worried"], [2, 2, 2]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //4
-  statesModel.setData("Surprise",  Color.fromRGBO(178,212,245,1), ["Confused", "Amused", "Dissappointed"]);
+  statesModel.setData("Surprise",  Color.fromRGBO(178,212,245,1), ["Confused", "Amused", "Dissappointed"], [2, 2, 2]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //5
-  statesModel.setData("Sad",  Color.fromRGBO(178,178,245,1), ["Lonely", "Grief", "Depressed"]);
+  statesModel.setData("Sad",  Color.fromRGBO(178,178,245,1), ["Lonely", "Grief", "Depressed"], [2, 2, 2]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //6
-  statesModel.setData("Disgust",  Color.fromRGBO(228,178,245,1), ["Contempt", "Repelled", "Disapproval"]);
+  statesModel.setData("Disgust",  Color.fromRGBO(228,178,245,1), ["Contempt", "Repelled", "Disapproval"],[2, 2, 2]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //7
-  statesModel.setData("Anger",  Color.fromRGBO(245,178,178,1), ["Insulted", "Mad", "Aggressive"]);
+  statesModel.setData("Anger",  Color.fromRGBO(245,178,178,1), ["Insulted", "Mad", "Aggressive"], [2, 2, 2]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //8
-  statesModel.setData("Anticipation",  Color.fromRGBO(255,222,180,1), ["Excited", "Interested", "Stressed"]);
+  statesModel.setData("Anticipation",  Color.fromRGBO(255,222,180,1), ["Excited", "Interested", "Stressed"], [1, 1, 2]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
