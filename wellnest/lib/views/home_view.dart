@@ -67,7 +67,7 @@ class _HomeViewState extends State<HomeView> {
                                   style: TextStyle(
                                       color: Color.fromARGB(255, 102, 102, 102),
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 30.0))
+                                      fontSize: 34.0))
                             ],
                           ),
                         ),

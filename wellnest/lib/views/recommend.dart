@@ -12,8 +12,9 @@ class _RecommendScreenState extends State<RecommendScreen> {
   
   @override
   Widget build(BuildContext context) {
-    int emotionTag = widget.emotionTag;
+    int tag = widget.emotionTag;
     Color emotionColor = widget.emotionColor;
+    List statement = ["We're sorry to hear that, Would you like to try any of the following?", "We're happy to know that! Would you like to try any of the following?"];
     return Scaffold(
       backgroundColor: emotionColor,
       appBar: AppBar(
@@ -54,7 +55,7 @@ class _RecommendScreenState extends State<RecommendScreen> {
                           padding: const EdgeInsets.all(55.0),
                           child: Column(
                             children: [
-                              Text("a",
+                              Text(statement[tag],
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,
