@@ -28,7 +28,8 @@ class _QuizScreenState extends State<QuizScreen>{
     return Scaffold(
       appBar: AppBar(
         title: const Text("How Are You Feeling Today?",
-        style: TextStyle(color: Color.fromARGB(255, 60, 60, 60)),
+        style: TextStyle(color: Color.fromARGB(255, 60, 60, 60),
+        fontWeight: FontWeight.bold),
         ),
         backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
       ),
@@ -133,37 +134,37 @@ List<BasicEmotions> allStates() {
   statesModel = new BasicEmotions();
 
   //3
-  statesModel.setData("Fear",  Color.fromRGBO(178,245,228,1), ["Callous", "Nervous", "Worried"], [2, 2, 2]);
+  statesModel.setData("Fear",  Color.fromRGBO(178,245,228,1), ["Callous", "Nervous", "Worried"], [0, 0, 0]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //4
-  statesModel.setData("Surprise",  Color.fromRGBO(178,212,245,1), ["Confused", "Amused", "Dissappointed"], [2, 2, 2]);
+  statesModel.setData("Surprise",  Color.fromRGBO(178,212,245,1), ["Confused", "Amused", "Dissappointed"], [0, 1, 0]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //5
-  statesModel.setData("Sad",  Color.fromRGBO(178,178,245,1), ["Lonely", "Grief", "Depressed"], [2, 2, 2]);
+  statesModel.setData("Sad",  Color.fromRGBO(178,178,245,1), ["Lonely", "Grief", "Depressed"], [0, 0, 0]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //6
-  statesModel.setData("Disgust",  Color.fromRGBO(228,178,245,1), ["Contempt", "Repelled", "Disapproval"],[2, 2, 2]);
+  statesModel.setData("Disgust",  Color.fromRGBO(228,178,245,1), ["Contempt", "Repelled", "Disapproval"], [0, 0, 0]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //7
-  statesModel.setData("Anger",  Color.fromRGBO(245,178,178,1), ["Insulted", "Mad", "Aggressive"], [2, 2, 2]);
+  statesModel.setData("Anger",  Color.fromRGBO(245,178,178,1), ["Insulted", "Mad", "Aggressive"], [0, 0, 0]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
 
   //8
-  statesModel.setData("Anticipation",  Color.fromRGBO(255,222,180,1), ["Excited", "Interested", "Stressed"], [1, 1, 2]);
+  statesModel.setData("Anticipation",  Color.fromRGBO(255,222,180,1), ["Excited", "Interested", "Stressed"], [1, 1, 0]);
 
   emotions.add(statesModel);
   statesModel = new BasicEmotions();
