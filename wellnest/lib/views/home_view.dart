@@ -206,6 +206,34 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    width: 320.0,
+                    height: 130.0,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0)),
+                      ),
+                      child: const Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Text("Information Page",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 102, 102, 102),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 34.0))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   )
                 ],
               ),
