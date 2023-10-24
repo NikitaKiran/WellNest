@@ -244,8 +244,8 @@ class _HomeViewState extends State<HomeView> {
               child: IconButton(
                   onPressed: () {},
                   icon: const Icon(
-                    Icons.person,
-                    size: 50,
+                    Icons.pie_chart_rounded,
+                    size: 45,
                   )),
             ),
           ],
