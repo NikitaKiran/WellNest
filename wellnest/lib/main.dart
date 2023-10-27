@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -11,7 +9,6 @@ import 'package:wellnest/views/daily_quiz.dart';
 import 'package:wellnest/views/doodle_view.dart';
 import 'package:wellnest/views/ghq_view.dart';
 import 'package:wellnest/views/gol_view.dart';
-import 'package:wellnest/views/info_view.dart';
 import 'package:wellnest/views/landing_view.dart';
 import 'package:wellnest/views/note_view.dart';
 import 'package:wellnest/views/relax_options_view.dart';
@@ -57,8 +54,7 @@ void main() {
       '/doodle/' : (context) => const DrawingRoomScreen(),
       '/affirm/' : (context) => const AffirmPage(),
       '/ghq/' : (context) => const GHQView(),
-      '/quiz/':(context) => const DailyQuiz(),
-      '/info/':(context) => MentalHealthInfoScreen(),
+      '/quiz/':(context) => const QuizScreen(),
     },
   ));
 }
