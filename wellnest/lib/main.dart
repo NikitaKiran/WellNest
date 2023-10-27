@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -41,6 +43,7 @@ void main() {
       '/home/': (context) => const HomeView(),
       '/verify/': (context) => const VerifyEmailView(),
       '/setup/': (context) => const SetupView(),
+      '/daily_quiz/': (context) => const QuizScreen(),
       '/timer/': (context) => const TimerPage(),
       '/options/':(context) => const OptionsView(),
       '/box_breathing/':(context) => const BoxBreathingView(),
