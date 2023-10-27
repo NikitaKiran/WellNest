@@ -1,13 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
-
   @override
   State<HomeView> createState() => _HomeViewState();
 }
-
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
@@ -33,206 +30,214 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       body: SingleChildScrollView(
-          child: SafeArea(
-              child: Column(
-        children: [
-          SizedBox(height: 20,),
-          Center(
-            child: SizedBox(
-                      width: 320.0,
-                      height: 130.0,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context)
-                              .pushNamed('/quiz/');
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
-                          elevation: 2.0,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0)),
-                        ),
-                        child: const Center(
-                          child: Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                Text("How are you feeling today?",
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Color.fromARGB(255, 102, 102, 102),
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 30.0))
-                              ],
-                            ),
+        child: SafeArea(
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Center(
+              child: Wrap(
+                spacing: 20.0,
+                runSpacing: 20.0,
+                children: [
+                  SizedBox(
+                    width: 320.0,
+                    height: 130.0,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/daily_quiz/');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0)),
+                      ),
+                      child: const Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Text("How are you feeling today?",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 102, 102, 102),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 34.0))
+                            ],
                           ),
                         ),
                       ),
                     ),
-          ),
-          SizedBox(height: 5,),
-          Center(
-            child: Row( crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                        width: 150.0,
-                        height: 150.0,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context)
-                                .pushNamed('/notes/');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                const Color.fromRGBO(255, 202, 204, 1.000),
-                            elevation: 2.0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0)),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Image.asset("assets/journal.png",
-                                      width: 81.0, height: 80.0),
-                                  const SizedBox(height: 13.0),
-                                  const Text("Journal",
-                                      style: TextStyle(
-                                          color: Color.fromARGB(255, 60, 60, 60),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18.0))
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
+                  ),
+                  SizedBox(
+                    width: 150.0,
+                    height: 150.0,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/notes/');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            const Color.fromRGBO(255, 202, 204, 1.000),
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0)),
                       ),
-                ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        width: 150.0,
-                        height: 150.0,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context)
-                                .pushNamed('/options/');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
-                            elevation: 2.0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0)),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Image.asset("assets/meditate.png",
-                                      width: 85.0, height: 85.0),
-                                  const SizedBox(height: 8.0),
-                                  const Text("Meditate",
-                                      style: TextStyle(
-                                          color: Color.fromARGB(255, 60, 60, 60),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18.0))
-                                ],
-                              ),
-                            ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Image.asset("assets/journal.png",
+                                  width: 81.0, height: 80.0),
+                              const SizedBox(height: 13.0),
+                              const Text("Journal",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 60, 60, 60),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18.0))
+                            ],
                           ),
                         ),
                       ),
                     ),
-              ],
-          
+                  ),
+                  SizedBox(
+                    width: 150.0,
+                    height: 150.0,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/options/');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0)),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Image.asset("assets/meditate.png",
+                                  width: 85.0, height: 85.0),
+                              const SizedBox(height: 8.0),
+                              const Text("Meditate",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 60, 60, 60),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18.0))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 150.0,
+                    height: 150.0,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/relax/');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromRGBO(221, 187, 204, 1),
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0)),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Image.asset("assets/relax.png",
+                                  width: 80.0, height: 80.0),
+                              const SizedBox(height: 8.0),
+                              const Text("Relax",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 60, 60, 60),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18.0))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 150.0,
+                    height: 150.0,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/affirm/');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0)),
+                      ),
+                      child: Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Image.asset("assets/affirm.png",
+                                  width: 80.0, height: 81.0),
+                              const SizedBox(height: 8.0),
+                              const Text("Affirm",
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 60, 60, 60),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18.0))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 320.0,
+                    height: 130.0,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0)),
+                      ),
+                      child: const Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Column(
+                            children: [
+                              Text("Information Page",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Color.fromARGB(255, 102, 102, 102),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 34.0))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-          Center(
-            child: Row( crossAxisAlignment: CrossAxisAlignment.center, mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                        width: 150.0,
-                        height: 150.0,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context)
-                                .pushNamed('/relax/');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                const Color.fromRGBO(221, 187, 204, 1),
-                            elevation: 2.0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0)),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Image.asset("assets/relax.png",
-                                      width: 81.0, height: 80.0),
-                                  const SizedBox(height: 13.0),
-                                  const Text("Relax",
-                                      style: TextStyle(
-                                          color: Color.fromARGB(255, 60, 60, 60),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18.0))
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        width: 150.0,
-                        height: 150.0,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context)
-                                .pushNamed('/affirm/');
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
-                            elevation: 2.0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12.0)),
-                          ),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  Image.asset("assets/affirm.png",
-                                      width: 85.0, height: 85.0),
-                                  const SizedBox(height: 8.0),
-                                  const Text("Affirm",
-                                      style: TextStyle(
-                                          color: Color.fromARGB(255, 60, 60, 60),
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18.0))
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-              ],
-          
-            ),
-          ),
-        ],
-      ))),
+          )
+        ])),
+      ),
       bottomNavigationBar: BottomAppBar(
         color: const Color.fromRGBO(250, 243, 240, 1),
         elevation: 2.0,
@@ -242,7 +247,9 @@ class _HomeViewState extends State<HomeView> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    
+                  },
                   icon: const Icon(
                     Icons.home,
                     size: 50,
@@ -272,7 +279,6 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
-
 Future<bool> showLogoutDialogue(BuildContext context) {
   return showDialog(
       context: context,
