@@ -76,7 +76,13 @@ class _RegisterViewState extends State<RegisterView> {
                       email: email, password: pass);
                   if (context.mounted) {
                     Navigator.of(context)
-                        .pushNamedAndRemoveUntil('/setup/', (_) => false);
+                        .pushNamedAndRemoveUntil('/ghq/', (_) => false);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('Registered successfully'),
+                        duration: Duration(seconds: 1),
+                      ),
+                    );
                   }
                 } on FirebaseAuthException catch (e) {
                   if (e.code == 'weak-password') {

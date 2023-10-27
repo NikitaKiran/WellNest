@@ -108,12 +108,12 @@ class SetupFormState extends State<SetupForm> {
                 
                 if (_formKey.currentState!.validate()) {
                   Navigator.of(context).pushNamedAndRemoveUntil(
-                    '/verify/',
+                    '/ghq/',
                     (_) => false,
                   );
                 }
               },
-              child: const Text('Submit'),
+              child: const Text('Proceed'),
             ),
           ),
         ],
