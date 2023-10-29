@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:wellnest/views/sub_choice.dart';
 import 'package:wellnest/widgets/tile.dart';
-
+/*
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:wellnest/widgets/error_dialogue.dart';
+*/
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key}) : super(key: key);
@@ -16,7 +20,7 @@ class _QuizScreenState extends State<QuizScreen>{
   Color currentColor = const Color.fromRGBO(245,245,178,1);
   List currentSubEmotions = ["Optimistic", "Joyful", "Love"];
   List currentTags = [1, 1, 1];
-  int emotionNo = 0;
+  int emotionCount = 0;
 
   @override
   void initState() {
@@ -55,6 +59,7 @@ class _QuizScreenState extends State<QuizScreen>{
               ),
             ),
           ),
+          
           ListWheelScrollView.useDelegate(
             itemExtent: 100,
             physics: FixedExtentScrollPhysics(),
@@ -77,16 +82,45 @@ class _QuizScreenState extends State<QuizScreen>{
               },
             ),
           ),
+          /*StreamBuilder<QuerySnapshot>(
+                stream:
+                    FirebaseFirestore.instance.collection("Moods").where('UID', isEqualTo: user?.uid).snapshots(),
+                builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  if (snapshot.hasData && snapshot.data!.docs.isNotEmpty) {
+                    return GridView(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                      ),
+                      children: snapshot.data!.docs
+                          .map((counter) => data.toList(),
+                    );
+                  }
+                },
+              ),*/
         ],
       ),
       
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.arrow_forward),
+        
         backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
         foregroundColor: const Color.fromARGB(255, 60, 60, 60),
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context)=> SubChoiceScreen(currentState, currentColor, currentSubEmotions, currentTags)));
+          /* FirebaseFirestore.instance.collection("Moods").add({
+            "date":date,
+            "emotion": currentstate,
+            "emotionCount":currentCount,
+            "UID": user?.uid,
+          }).then<void> ((value) {
+            Navigator.pop(context);
+          }).catchError((error) =>  showErrorDialogue(context, error));*/
         },
+        child: const Icon(Icons.arrow_forward),
       ),
     );
   }
