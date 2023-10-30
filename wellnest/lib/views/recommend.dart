@@ -22,7 +22,7 @@ class _RecommendScreenState extends State<RecommendScreen> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: emotionColor,
-        elevation: 2.0,
+        elevation: 5.0,
         iconTheme: const IconThemeData(color: Colors.black),
         title: const Text('Tell us more about it', 
         style: TextStyle(color: Color.fromARGB(255, 60, 60, 60),
@@ -61,7 +61,7 @@ class _RecommendScreenState extends State<RecommendScreen> {
                   ),
                   SizedBox(
                     width: 300.0,
-                    height: 150.0,
+                    height: 100.0,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context)
@@ -69,20 +69,20 @@ class _RecommendScreenState extends State<RecommendScreen> {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: emotionColor,
-                        elevation: 2.0,
+                        elevation: 5.0,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0)),
                       ),
                       child: Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(55.0),
+                          padding: const EdgeInsets.all(28.0),
                           child: Column(
                             children: [
                               Text(activities[tag][0],
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22.0))
+                                      fontSize: 24.0))
                             ],
                           ),
                         ),
@@ -91,7 +91,7 @@ class _RecommendScreenState extends State<RecommendScreen> {
                   ),
                   SizedBox(
                     width: 300.0,
-                    height: 150.0,
+                    height: 100.0,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context)
@@ -99,20 +99,20 @@ class _RecommendScreenState extends State<RecommendScreen> {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: emotionColor,
-                        elevation: 2.0,
+                        elevation: 5.0,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0)),
                       ),
                       child: Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(55.0),
+                          padding: const EdgeInsets.all(28.0),
                           child: Column(
                             children: [
                               Text(activities[tag][1],
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22.0))
+                                      fontSize: 24.0))
                             ],
                           ),
                         ),
@@ -121,7 +121,7 @@ class _RecommendScreenState extends State<RecommendScreen> {
                   ),
                   SizedBox(
                     width: 300.0,
-                    height: 150.0,
+                    height: 100.0,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.of(context)
@@ -129,20 +129,20 @@ class _RecommendScreenState extends State<RecommendScreen> {
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: emotionColor,
-                        elevation: 2.0,
+                        elevation: 5.0,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12.0)),
                       ),
                       child: Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(55.0),
+                          padding: const EdgeInsets.all(28.0),
                           child: Column(
                             children: [
                               Text(activities[tag][2],
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22.0))
+                                      fontSize: 24.0))
                             ],
                           ),
                         ),

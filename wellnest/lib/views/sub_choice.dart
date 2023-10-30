@@ -40,7 +40,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(50.0),
             child: Center(
               child: Wrap(
                 spacing: 20.0,
@@ -48,7 +48,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                 children: [
                   SizedBox(
                     width: 300.0,
-                    height: 150.0,
+                    height: 100.0,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> RecommendScreen(Tag1, emotionColor)));
@@ -61,14 +61,14 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                       ),
                       child: Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(55.0),
+                          padding: const EdgeInsets.all(28.0),
                           child: Column(
                             children: [
                               Text(Emotion1,
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22.0))
+                                      fontSize: 24.0))
                             ],
                           ),
                         ),
@@ -77,7 +77,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                   ),
                   SizedBox(
                     width: 300.0,
-                    height: 150.0,
+                    height: 100.0,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> RecommendScreen(Tag2, emotionColor)));
@@ -90,14 +90,14 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                       ),
                       child: Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(55.0),
+                          padding: const EdgeInsets.all(28.0),
                           child: Column(
                             children: [
                               Text(Emotion2,
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22.0))
+                                      fontSize: 24.0))
                             ],
                           ),
                         ),
@@ -107,7 +107,7 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                   
                   SizedBox(
                     width: 300.0,
-                    height: 150.0,
+                    height: 100.0,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> RecommendScreen(Tag3, emotionColor)));
@@ -120,14 +120,14 @@ class _SubChoiceScreenState extends State<SubChoiceScreen> {
                       ),
                       child: Center(
                         child: Padding(
-                          padding: const EdgeInsets.all(55.0),
+                          padding: const EdgeInsets.all(28.0),
                           child: Column(
                             children: [
                               Text(Emotion3,
                                   style: const TextStyle(
                                       color: Color.fromARGB(255, 60, 60, 60),
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22.0))
+                                      fontSize: 24.0))
                             ],
                           ),
                         ),
