@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -21,6 +23,7 @@ import './views/register_view.dart';
 import './views/setup_view.dart';
 import 'firebase_options.dart';
 import 'views/verify_email_view.dart';
+import 'views/info_view.dart';
 
 
 void main() {
@@ -55,6 +58,7 @@ void main() {
       '/affirm/' : (context) => const AffirmPage(),
       '/ghq/' : (context) => const GHQView(),
       '/quiz/':(context) => const QuizScreen(),
+      '/info/':(context) =>  MentalHealthInfoScreen(),
     },
   ));
 }
