@@ -1,20 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(WellnestApp());
-}
-
-class WellnestApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Colors.purple, // Set the title bar color to purple
-      ),
-      home: MentalHealthInfoScreen(),
-    );
-  }
-}
 
 class MentalHealthInfoScreen extends StatelessWidget {
   // Define a list of mental health information.
@@ -83,11 +68,13 @@ class MentalHealthInfoScreen extends StatelessWidget {
     // Add more MentalHealthInfo items here
   ];
 
+MentalHealthInfoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mental Health Information'),
+        title: const Text('Mental Health Information'),
       ),
       body: ListView.builder(
         itemCount: mentalHealthInfoList.length,
@@ -117,7 +104,7 @@ class MentalHealthInfo {
 class MentalHealthCard extends StatefulWidget {
   final MentalHealthInfo mentalHealthInfo;
 
-  MentalHealthCard({required this.mentalHealthInfo});
+  MentalHealthCard({super.key, required this.mentalHealthInfo});
 
   @override
   _MentalHealthCardState createState() => _MentalHealthCardState();
@@ -129,7 +116,7 @@ class _MentalHealthCardState extends State<MentalHealthCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(16.0),
+      margin: const EdgeInsets.all(16.0),
       elevation: 6.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12.0),
@@ -144,7 +131,7 @@ class _MentalHealthCardState extends State<MentalHealthCard> {
             },
             title: Text(
               widget.mentalHealthInfo.title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
                 color: Colors.purple,
@@ -157,57 +144,57 @@ class _MentalHealthCardState extends State<MentalHealthCard> {
           ),
           if (isExpanded)
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Description:',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   Text(
                     widget.mentalHealthInfo.description,
-                    style: TextStyle(fontSize: 16.0),
+                    style: const TextStyle(fontSize: 16.0),
                   ),
-                  SizedBox(height: 16.0),
-                  Text(
+                  const SizedBox(height: 16.0),
+                  const Text(
                     'Symptoms:',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: widget.mentalHealthInfo.symptoms
                         .split('\n')
                         .map((line) => Text(
                               line.trim(),
-                              style: TextStyle(fontSize: 16.0),
+                              style: const TextStyle(fontSize: 16.0),
                             ))
                         .toList(),
                   ),
-                  SizedBox(height: 16.0),
-                  Text(
+                  const SizedBox(height: 16.0),
+                  const Text(
                     'Treatments:',
                     style: TextStyle(
                       fontSize: 18.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: widget.mentalHealthInfo.treatments
                         .split('\n')
                         .map((line) => Text(
                               line.trim(),
-                              style: TextStyle(fontSize: 16.0),
+                              style: const TextStyle(fontSize: 16.0),
                             ))
                         .toList(),
                   ),
