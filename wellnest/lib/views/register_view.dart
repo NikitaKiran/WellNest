@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 
 import '../widgets/error_dialogue.dart';
 
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
 
@@ -14,6 +17,9 @@ class RegisterView extends StatefulWidget {
 class _RegisterViewState extends State<RegisterView> {
   late final TextEditingController _email;
   late final TextEditingController _password;
+
+
+  final user = FirebaseAuth.instance.currentUser;
 
   @override
   void initState() {
@@ -97,6 +103,16 @@ class _RegisterViewState extends State<RegisterView> {
                 } catch (e) {
                   await showErrorDialogue(context, e.toString());
                 }
+
+              addEmotion("Happy");
+              addEmotion("Trust");
+              addEmotion("Fear");
+              addEmotion("Surprise");
+              addEmotion("Sad");
+              addEmotion("Disgust");
+              addEmotion("Anger");
+              addEmotion("Anticipation");
+              
               },
               child: const Text('Register'),
             ),
@@ -111,4 +127,15 @@ class _RegisterViewState extends State<RegisterView> {
       ),
     );
   }
+}
+CollectionReference emotions = FirebaseFirestore.instance.collection('Moods');
+
+Future<void> addEmotion(String emotion) {
+  return emotions
+    .doc(emotion)
+    .set({
+      'emotionCount': 0
+    })
+    .then((value) => 1)
+    .catchError((error) => -1);
 }
