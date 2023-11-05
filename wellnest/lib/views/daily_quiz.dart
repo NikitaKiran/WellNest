@@ -94,23 +94,7 @@ class _QuizScreenState extends State<QuizScreen>{
         onPressed: () {
           
           Navigator.push(context, MaterialPageRoute(builder: (context)=> SubChoiceScreen(currentState, currentColor, currentSubEmotions, currentTags)));
-          /* var collection = FirebaseFirestore.instance.collection('Moods');
-          collection.snapshots().listen((querySnapshot) {
-            for (var doc in querySnapshot.docs) {
-              Map<String, dynamic> data = doc.data();
-              if (data['emotion'] == currentState )
-              {
-                emotionCount= data['emotionCount']; 
-              }
-            }
-          });
-          FirebaseFirestore.instance.collection("Moods").add({
-            "emotion": currentState,
-            "emotionCount":emotionCount + 1,
-            "UID": user?.uid,
-          }).then<void> ((value) {
-            Navigator.pop(context);
-          }).catchError((error) =>  showErrorDialogue(context, error)); */
+          updateEmotion(currentState);
         },
         child: const Icon(Icons.arrow_forward),
       ),
@@ -197,3 +181,40 @@ List<BasicEmotions> allStates() {
 
   return emotions;
 }
+
+CollectionReference users = FirebaseFirestore.instance.collection('Moods');
+
+Future<void> updateEmotion(String emotion) {
+  return users
+    .doc('emotion')
+    .update({'emotionCount': FieldValue.increment(1)})
+    .then((value) => 1)
+    .catchError((error) => -1);
+}
+
+
+
+
+
+
+
+
+
+
+          /* var collection = FirebaseFirestore.instance.collection('Moods');
+          collection.snapshots().listen((querySnapshot) {
+            for (var doc in querySnapshot.docs) {
+              Map<String, dynamic> data = doc.data();
+              if (data['emotion'] == currentState )
+              {
+                emotionCount= data['emotionCount']; 
+              }
+            }
+          });
+          FirebaseFirestore.instance.collection("Moods").add({
+            "emotion": currentState,
+            "emotionCount":emotionCount + 1,
+            "UID": user?.uid,
+          }).then<void> ((value) {
+            Navigator.pop(context);
+          }).catchError((error) =>  showErrorDialogue(context, error)); */
