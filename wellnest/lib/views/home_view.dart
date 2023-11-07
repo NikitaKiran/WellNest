@@ -213,8 +213,8 @@ class _HomeViewState extends State<HomeView> {
                             .pushNamed('/info/');
                             },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
-                        elevation: 2.0,
+                        backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
+                        elevation: 3.0,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0)),
                       ),
@@ -223,7 +223,7 @@ class _HomeViewState extends State<HomeView> {
                           padding: EdgeInsets.all(8.0),
                           child: Column(
                             children: [
-                              Text("Information Page",
+                              Text("Understand Mental Health",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       color: Color.fromARGB(255, 102, 102, 102),
