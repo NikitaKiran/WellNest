@@ -134,7 +134,8 @@ Future<void> addEmotion(String emotion) {
   return emotions
     .doc(emotion)
     .set({
-      'emotionCount': 0
+      'emotion': emotion,
+      'emotionCount': 0.0
     })
     .then((value) => 1)
     .catchError((error) => -1);
