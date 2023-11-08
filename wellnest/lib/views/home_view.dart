@@ -270,7 +270,10 @@ class _HomeViewState extends State<HomeView> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                    .pushNamed('/pie_chart/');
+                  },
                   icon: const Icon(
                     Icons.pie_chart_rounded,
                     size: 45,
