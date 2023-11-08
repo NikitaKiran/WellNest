@@ -24,7 +24,7 @@ import './views/setup_view.dart';
 import 'firebase_options.dart';
 import 'views/verify_email_view.dart';
 import 'views/info_view.dart';
-
+import 'views/piechart_view.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,6 +59,7 @@ void main() {
       '/ghq/' : (context) => const GHQView(),
       '/quiz/':(context) => const QuizScreen(),
       '/info/':(context) =>  MentalHealthInfoScreen(),
+      '/pie_chart/': (context) => const PiechartScreen(),
     },
   ));
 }
