@@ -192,23 +192,3 @@ Future<void> updateEmotion(String emotion) {
     .then((value) => 1)
     .catchError((error) => -1);
 }
-
-
-
-
-
-
-
-
-
-
-          /* var collection = FirebaseFirestore.instance.collection('Moods');
-          collection.snapshots().listen((querySnapshot) {
-            for (var doc in querySnapshot.docs) {
-              Map<String, dynamic> data = doc.data();
-              if (data['emotion'] == currentState )
-              {
-                emotionCount= data['emotionCount']; 
-              }
-            }
-          });*/
