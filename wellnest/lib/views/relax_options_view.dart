@@ -44,6 +44,16 @@ class RelaxOptionsView extends StatelessWidget {
                 
                 child: const Center(child: Text("Doodle", style: TextStyle(fontSize: 20),)),
               )),
+              Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context)
+                            .pushNamed('/pattern/');
+                },
+                
+                child: const Center(child: Text("Pattern Viewer", style: TextStyle(fontSize: 20),)),
+              )),
         ],
       ),
     );

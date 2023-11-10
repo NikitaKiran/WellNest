@@ -47,6 +47,9 @@ dependencies:
   intl:
   http: ^1.1.0
   collection:
+  funvas:
+  flutter_fractal: ^2.0.0
+
 
 dev_dependencies:
   flutter_test:

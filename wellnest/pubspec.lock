@@ -270,6 +270,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_fractal:
+    dependency: "direct main"
+    description:
+      name: flutter_fractal
+      sha256: "29295ec2a0584b0eb4816db8d49c8e775bd15823690519e7e8422de24612e72d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   flutter_launcher_icons:
     dependency: "direct dev"
     description:
@@ -296,6 +304,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  funvas:
+    dependency: "direct main"
+    description:
+      name: funvas
+      sha256: "144829fd244d1128c899785ca2654f6d57bfa9548f22e2d084f44c33550b15d2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.8"
   google_fonts:
     dependency: "direct main"
     description:
