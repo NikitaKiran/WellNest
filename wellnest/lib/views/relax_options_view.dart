@@ -14,16 +14,6 @@ class RelaxOptionsView extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40,vertical:10),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context)
-                            .pushNamed('/ttt/');
-                },
-                
-                child: const Center(child: Text("Tic Tac Toe", style: TextStyle(fontSize: 20),)),
-              )),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
               child: ElevatedButton(

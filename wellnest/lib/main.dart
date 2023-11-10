@@ -13,7 +13,6 @@ import 'package:wellnest/views/gol_view.dart';
 import 'package:wellnest/views/landing_view.dart';
 import 'package:wellnest/views/note_view.dart';
 import 'package:wellnest/views/relax_options_view.dart';
-import 'package:wellnest/views/ttt_view.dart';
 import './views/options_view.dart';
 import './views/login_view.dart';
 import './views/home_view.dart';
@@ -52,7 +51,6 @@ void main() {
       '/notes/' :(context) => const NotesView(),
       '/relax/' : (context) => const RelaxOptionsView(),
       '/gol/' : (context) => const GameView(),
-      '/ttt/' : (context) => const TTTPage(),
       '/doodle/' : (context) => const DrawingRoomScreen(),
       '/affirm/' : (context) => const AffirmPage(),
       '/ghq/' : (context) => const GHQView(),
