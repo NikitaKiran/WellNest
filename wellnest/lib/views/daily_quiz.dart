@@ -3,7 +3,6 @@ import 'package:wellnest/views/sub_choice.dart';
 import 'package:wellnest/widgets/tile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:wellnest/widgets/error_dialogue.dart';
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key}) : super(key: key);
@@ -62,7 +61,7 @@ class _QuizScreenState extends State<QuizScreen>{
           
           ListWheelScrollView.useDelegate(
             itemExtent: 100,
-            physics: FixedExtentScrollPhysics(),
+            physics: const FixedExtentScrollPhysics(),
             useMagnifier: true,
             magnification: 1.5,
             onSelectedItemChanged: (index) {

@@ -12,7 +12,8 @@ class RelaxOptionsView extends StatelessWidget {
       ),
       backgroundColor: const Color.fromARGB(255, 236, 239, 236),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
@@ -21,8 +22,11 @@ class RelaxOptionsView extends StatelessWidget {
                   Navigator.of(context)
                             .pushNamed('/gol/');
                 },
-                
-                child: const Center(child: Text("Conway's Game of Life", style: TextStyle(fontSize: 20),)),
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(350, 50),
+                  elevation: 4.0
+                ),
+                child: const Center(child: Text("Conway's Game of Life", style: TextStyle(fontSize: 25),)),
               )),
               Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
@@ -31,8 +35,11 @@ class RelaxOptionsView extends StatelessWidget {
                   Navigator.of(context)
                             .pushNamed('/doodle/');
                 },
-                
-                child: const Center(child: Text("Doodle", style: TextStyle(fontSize: 20),)),
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(350, 50),
+                  elevation: 4.0
+                ),
+                child: const Center(child: Text("Doodle", style: TextStyle(fontSize: 25),)),
               )),
               Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
@@ -41,8 +48,11 @@ class RelaxOptionsView extends StatelessWidget {
                   Navigator.of(context)
                             .pushNamed('/pattern/');
                 },
-                
-                child: const Center(child: Text("Pattern Viewer", style: TextStyle(fontSize: 20),)),
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(350, 50),
+                  elevation: 4.0
+                ),
+                child: const Center(child: Text("Pattern Viewer", style: TextStyle(fontSize: 25),)),
               )),
         ],
       ),
