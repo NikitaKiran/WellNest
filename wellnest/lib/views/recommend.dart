@@ -43,7 +43,7 @@ class _RecommendScreenState extends State<RecommendScreen> {
                 children: [
                   SizedBox(
                     width: 300.0,
-                    height: 150.0,
+                   
                       child: Center(
                         child: Padding(
                           padding: const EdgeInsets.all(5.0),
