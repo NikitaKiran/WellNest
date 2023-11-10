@@ -12,7 +12,8 @@ class OptionsView extends StatelessWidget {
       ),
       backgroundColor: const Color.fromARGB(255, 236, 239, 236),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical:10),
@@ -21,8 +22,11 @@ class OptionsView extends StatelessWidget {
                   Navigator.of(context)
                             .pushNamed('/timer/');
                 },
-                
-                child: const Center(child: Text("Meditation Timer", style: TextStyle(fontSize: 20),)),
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(350, 50),
+                  elevation: 4.0
+                ),
+                child: const Center(child: Text("Meditation Timer", style: TextStyle(fontSize: 24))),
               )),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
@@ -31,8 +35,11 @@ class OptionsView extends StatelessWidget {
                   Navigator.of(context)
                             .pushNamed('/box_breathing/');
                 },
-                
-                child: const Center(child: Text("Box Breathing", style: TextStyle(fontSize: 20),)),
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(350, 50),
+                  elevation: 4.0
+                ),
+                child: const Center(child: Text("Box Breathing", style: TextStyle(fontSize: 24))),
               )),
               Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
@@ -41,8 +48,12 @@ class OptionsView extends StatelessWidget {
                   Navigator.of(context)
                             .pushNamed('/478_breathing/');
                 },
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(350, 50),
+                  elevation: 4.0
+                ),
                 
-                child: const Center(child: Text("4-7-8 Breathing", style: TextStyle(fontSize: 20),)),
+                child: const Center(child: Text("4-7-8 Breathing", style: TextStyle(fontSize: 24),)),
               )),
               Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
@@ -51,8 +62,11 @@ class OptionsView extends StatelessWidget {
                   Navigator.of(context)
                             .pushNamed('/custom_breathing/');
                 },
-                
-                child: const Center(child: Text("Custom Breathwork", style: TextStyle(fontSize: 20),)),
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(350, 50),
+                  elevation: 4.0
+                ),
+                child: const Center(child: Text("Custom Breathwork", style: TextStyle(fontSize: 24),)),
               ))
         ],
       ),

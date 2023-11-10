@@ -18,7 +18,9 @@ class ResultPage extends StatelessWidget {
               
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Center(child: (score > 4)? Text('You seem to show signs of mental distress.\nIt is recommended that you consult a mental health professional in addition to using this app.', style: TextStyle(fontSize: 20),):Text('You do not seem to show signs of mental distress!\nContinue using this app to take good care of your mental health.', style: TextStyle(fontSize: 20 ))),
+                child: Center(child: (score > 4)? 
+                Text('You seem to show signs of mental distress.\nIt is recommended that you consult a mental health professional in addition to using this app.', textAlign: TextAlign.justify, style: TextStyle(fontSize: 26),)
+                :Text('You do not seem to show signs of mental distress!\nContinue using this app to take good care of your mental health.',textAlign: TextAlign.justify , style: TextStyle(fontSize: 26 ))),
               ),
             ),
             ElevatedButton(onPressed: (){
@@ -26,7 +28,11 @@ class ResultPage extends StatelessWidget {
                     '/verify/',
                     (_) => false,
                   );
-            }, child: Text('Proceed'))
+            },
+            style: ElevatedButton.styleFrom(
+              elevation: 4.0,
+            ),
+            child: Text('Proceed', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)))
           ],
         ),
       )

@@ -66,7 +66,7 @@ class _GHQViewState extends State<GHQView> {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(questions[i], style: TextStyle(color: Color.fromARGB(255, 77, 77, 77),fontSize: 16)),
+              child: Text(questions[i], style: const TextStyle(color: Color.fromARGB(255, 77, 77, 77),fontSize: 16)),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -79,7 +79,7 @@ class _GHQViewState extends State<GHQView> {
                     3: Text(options[i][3], textAlign: TextAlign.center,),
                   },
                   groupValue: _op[i],
-                  thumbColor: Color(0xFFFFCACC),
+                  thumbColor: const Color(0xFFFFCACC),
                   //unselectedColor: Colors.blueGrey.shade100,
                   onValueChanged: (value) {
                     setState(() {
@@ -92,7 +92,7 @@ class _GHQViewState extends State<GHQView> {
                 ),
               )
             ),
-            SizedBox(height: 15,)
+            const SizedBox(height: 15,)
           ],
         ),
             
@@ -101,7 +101,11 @@ class _GHQViewState extends State<GHQView> {
               child: ElevatedButton(onPressed: () {
                           Navigator.pop(context);
                             Navigator.push(context, MaterialPageRoute(builder: (context) => ResultPage(score: _score.sum)));
-                          },child:const Text('Confirm')),
+                          },
+                          style: ElevatedButton.styleFrom(
+                            elevation: 4.0,
+                          ),
+                          child:const Text('Confirm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14))),
             ),
           ],
         ),

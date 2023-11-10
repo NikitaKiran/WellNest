@@ -33,7 +33,7 @@ class _PiechartScreenState extends State<PiechartScreen> {
     
   }
 
-  List <Color> colorList= [Color.fromRGBO(245,245,178,1),
+  List <Color> colorList= const [Color.fromRGBO(245,245,178,1),
   Color.fromRGBO(178,245,178,1),
   Color.fromRGBO(178,245,228,1),
   Color.fromRGBO(178,212,245,1), 
@@ -94,17 +94,17 @@ class _PiechartScreenState extends State<PiechartScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             StreamBuilder<Object>(
               stream: emostream,
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
-                  return Text("something went wrong");
+                  return const Text("something went wrong");
                 }
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
+                  return const CircularProgressIndicator();
                 }
                 final data = snapshot.requireData;
                 print("data: $data");
