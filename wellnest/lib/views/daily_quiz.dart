@@ -5,7 +5,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wellnest/widgets/error_dialogue.dart';
 
-
 class QuizScreen extends StatefulWidget {
   const QuizScreen({Key? key}) : super(key: key);
   @override
@@ -14,6 +13,7 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen>{
   final user = FirebaseAuth.instance.currentUser;
+  
   List<BasicEmotions> emotions = [];
 
   String currentState = "Happy";
@@ -182,12 +182,13 @@ List<BasicEmotions> allStates() {
   return emotions;
 }
 
+
 CollectionReference users = FirebaseFirestore.instance.collection('Moods');
 
 Future<void> updateEmotion(String emotion) {
   return users
-    .doc('emotion')
-    .update({'emotionCount': FieldValue.increment(1)})
+    .doc(emotion)
+    .update({'emotionCount': FieldValue.increment(1.0)})
     .then((value) => 1)
     .catchError((error) => -1);
 }
@@ -210,11 +211,4 @@ Future<void> updateEmotion(String emotion) {
                 emotionCount= data['emotionCount']; 
               }
             }
-          });
-          FirebaseFirestore.instance.collection("Moods").add({
-            "emotion": currentState,
-            "emotionCount":emotionCount + 1,
-            "UID": user?.uid,
-          }).then<void> ((value) {
-            Navigator.pop(context);
-          }).catchError((error) =>  showErrorDialogue(context, error)); */
+          });*/
