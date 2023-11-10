@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 
 class MentalHealthInfoScreen extends StatelessWidget {
-  // Define a list of mental health information.
   final List<MentalHealthInfo> mentalHealthInfoList = [
     MentalHealthInfo(
       title: 'Understanding OCD',
@@ -65,7 +64,6 @@ class MentalHealthInfoScreen extends StatelessWidget {
       treatments:
           'Talk therapy and antidepressants can help increase confidence and improve ability to interact with others.',
     ),
-    // Add more MentalHealthInfo items here
   ];
 
 MentalHealthInfoScreen({super.key});
@@ -100,16 +98,13 @@ class MentalHealthInfo {
     required this.treatments,
   });
 }
-
 class MentalHealthCard extends StatefulWidget {
   final MentalHealthInfo mentalHealthInfo;
 
-  MentalHealthCard({super.key, required this.mentalHealthInfo});
-
+  const MentalHealthCard({super.key, required this.mentalHealthInfo});
   @override
-  _MentalHealthCardState createState() => _MentalHealthCardState();
+  State<MentalHealthCard> createState() => _MentalHealthCardState();
 }
-
 class _MentalHealthCardState extends State<MentalHealthCard> {
   bool isExpanded = false;
 
@@ -146,7 +141,7 @@ class _MentalHealthCardState extends State<MentalHealthCard> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Text(
                     'Description:',
@@ -170,7 +165,7 @@ class _MentalHealthCardState extends State<MentalHealthCard> {
                   ),
                   const SizedBox(height: 8.0),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: widget.mentalHealthInfo.symptoms
                         .split('\n')
                         .map((line) => Text(
@@ -189,7 +184,7 @@ class _MentalHealthCardState extends State<MentalHealthCard> {
                   ),
                   const SizedBox(height: 8.0),
                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: widget.mentalHealthInfo.treatments
                         .split('\n')
                         .map((line) => Text(

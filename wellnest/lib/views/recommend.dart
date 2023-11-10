@@ -21,7 +21,6 @@ class _RecommendScreenState extends State<RecommendScreen> {
       backgroundColor: emotionColor,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: emotionColor,
         elevation: 5.0,
         iconTheme: const IconThemeData(color: Colors.black),
         title: const Text('Tell us more about it', 
@@ -68,10 +67,8 @@ class _RecommendScreenState extends State<RecommendScreen> {
                             .pushNamed(activityNav[tag][0]);
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: emotionColor,
-                        elevation: 5.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0)),
+                        fixedSize: const Size(350, 50),
+                        elevation: 4.0
                       ),
                       child: Center(
                         child: Padding(
@@ -98,10 +95,8 @@ class _RecommendScreenState extends State<RecommendScreen> {
                             .pushNamed(activityNav[tag][1]);
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: emotionColor,
-                        elevation: 5.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0)),
+                        fixedSize: const Size(350, 50),
+                        elevation: 4.0
                       ),
                       child: Center(
                         child: Padding(
@@ -128,10 +123,8 @@ class _RecommendScreenState extends State<RecommendScreen> {
                             .pushNamed(activityNav[tag][2]);
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: emotionColor,
-                        elevation: 5.0,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12.0)),
+                        fixedSize: const Size(350, 50),
+                        elevation: 4.0
                       ),
                       child: Center(
                         child: Padding(

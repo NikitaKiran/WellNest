@@ -12,7 +12,7 @@ class _HomeViewState extends State<HomeView> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
+        backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
         elevation: 2.0,
         actions: [
           IconButton(
@@ -49,7 +49,7 @@ class _HomeViewState extends State<HomeView> {
                             .pushNamed('/daily_quiz/');
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(250, 243, 240, 1),
+                        backgroundColor: Color.fromARGB(255, 253, 247, 237),
                         elevation: 2.0,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0)),
@@ -213,7 +213,7 @@ class _HomeViewState extends State<HomeView> {
                             .pushNamed('/info/');
                             },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
+                        backgroundColor: const Color.fromARGB(255, 253, 247, 237),
                         elevation: 3.0,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0)),
@@ -242,7 +242,7 @@ class _HomeViewState extends State<HomeView> {
         ])),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: const Color.fromRGBO(250, 243, 240, 1),
+        color: const Color.fromRGBO(226, 220, 222, 1),
         elevation: 2.0,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
