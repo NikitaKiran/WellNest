@@ -134,6 +134,7 @@ Future<void> addEmotion(String emotion) {
   return emotions
     .doc(emotion)
     .set({
+      'UID': FirebaseAuth.instance.currentUser?.uid,
       'emotion': emotion,
       'emotionCount': 0.0
     })
