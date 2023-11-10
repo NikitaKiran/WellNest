@@ -34,7 +34,7 @@ class _QuizScreenState extends State<QuizScreen>{
         style: TextStyle(color: Color.fromARGB(255, 60, 60, 60),
         fontWeight: FontWeight.bold),
         ),
-        backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
+        backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
       ),
       body: Stack(
         children: [
@@ -87,7 +87,7 @@ class _QuizScreenState extends State<QuizScreen>{
       
       floatingActionButton: FloatingActionButton(
         
-        backgroundColor: const Color.fromRGBO(212, 226, 212, 1),
+        backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
         foregroundColor: const Color.fromARGB(255, 60, 60, 60),
         
         onPressed: () {

@@ -83,6 +83,7 @@ class _NotesViewState extends State<NotesView> {
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context)=> const NoteEditorScreen()));
         },
+        backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
         label: const Text("Add Note"),
         icon: const Icon(Icons.add),
       ),

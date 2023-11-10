@@ -20,7 +20,7 @@ class _GHQViewState extends State<GHQView> {
     'felt that you are playing a useful part in things?',
     'felt capable of making decisions about things?',
     'felt constantly under strain?',
-    'felt you couldn’t overcome your difficulties?',
+    'felt you couldn\'t overcome your difficulties?',
     'been able to enjoy your normal day-to-day activities?',
     'been able to face up to your problems?',
     'been feeling unhappy and depressed?',
@@ -80,7 +80,7 @@ class _GHQViewState extends State<GHQView> {
                   },
                   groupValue: _op[i],
                   thumbColor: const Color(0xFFFFCACC),
-                  //unselectedColor: Colors.blueGrey.shade100,
+                  //backgroundColor: Colors.blueGrey.shade100,
                   onValueChanged: (value) {
                     setState(() {
                       if (value != null) {
