@@ -132,9 +132,9 @@ CollectionReference emotions = FirebaseFirestore.instance.collection('Moods');
 
 Future<void> addEmotion(String emotion) {
   return emotions
-    .doc(emotion)
+    .doc(emotion+FirebaseAuth.instance.currentUser!.uid)
     .set({
-      'UID': FirebaseAuth.instance.currentUser?.uid,
+      'UID':FirebaseAuth.instance.currentUser!.uid,
       'emotion': emotion,
       'emotionCount': 0.0
     })

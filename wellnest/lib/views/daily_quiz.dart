@@ -187,7 +187,7 @@ CollectionReference users = FirebaseFirestore.instance.collection('Moods');
 
 Future<void> updateEmotion(String emotion) {
   return users
-    .doc(emotion)
+    .doc(emotion + FirebaseAuth.instance.currentUser!.uid)
     .update({'emotionCount': FieldValue.increment(1.0)})
     .then((value) => 1)
     .catchError((error) => -1);
