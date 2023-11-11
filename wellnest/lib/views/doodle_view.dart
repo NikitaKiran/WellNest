@@ -33,7 +33,7 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Doodle'),
-          backgroundColor: const Color(0xFFFFCACC),),
+        backgroundColor: const Color.fromRGBO(226, 220, 222, 1),),
       body: Stack(
         children: [
           /// Canvas
@@ -131,9 +131,9 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
                 value: selectedWidth,
                 min: 1,
                 max: 20,
-                activeColor: const Color.fromRGBO(221, 187, 204, 1),
+                activeColor: const Color.fromRGBO(226, 220, 222, 1),
                 inactiveColor: const Color.fromARGB(255, 225, 221, 223),
-                thumbColor: const Color.fromRGBO(221, 187, 204, 1),
+                thumbColor: const Color.fromRGBO(226, 220, 222, 1),
                 onChanged: (value) {
                   setState(() {
                     selectedWidth = value;
@@ -149,7 +149,7 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
         children: [
           FloatingActionButton(
             heroTag: "Undo",
-            backgroundColor: const Color.fromRGBO(221, 187, 204, 1),
+            backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
             foregroundColor: const Color.fromARGB(255, 60, 60, 60),
             onPressed: () {
               if (drawingPoints.isNotEmpty && historyDrawingPoints.isNotEmpty) {
@@ -163,7 +163,7 @@ class _DrawingRoomScreenState extends State<DrawingRoomScreen> {
           const SizedBox(width: 16),
           FloatingActionButton(
             heroTag: "Redo",
-            backgroundColor: const Color.fromRGBO(221, 187, 204, 1),
+            backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
             foregroundColor: const Color.fromARGB(255, 60, 60, 60),
             onPressed: () {
               setState(() {

@@ -8,7 +8,9 @@ class GameView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: const Color(0xFFFFCACC), title: const Text('Conway\'s Game of Life'),),
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
+        title: const Text('Conway\'s Game of Life'),),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(8.0),

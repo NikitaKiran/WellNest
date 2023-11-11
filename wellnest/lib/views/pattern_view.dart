@@ -39,7 +39,7 @@ class _PatternViewState extends State<PatternView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Pattern Viewer'),
-          backgroundColor: const Color(0xFFFFCACC),),
+        backgroundColor: const Color.fromRGBO(226, 220, 222, 1)),
       backgroundColor: Colors.black,
       body: Center(
         child: Viewer(boxes: PatternView.examples,)
