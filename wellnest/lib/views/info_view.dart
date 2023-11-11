@@ -72,6 +72,7 @@ MentalHealthInfoScreen({super.key});
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
         title: const Text('Mental Health Information'),
       ),
       body: ListView.builder(
@@ -129,7 +130,7 @@ class _MentalHealthCardState extends State<MentalHealthCard> {
               style: const TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.purple,
+                color: Color.fromARGB(255, 60, 60, 60),
               ),
             ),
             trailing: Icon(

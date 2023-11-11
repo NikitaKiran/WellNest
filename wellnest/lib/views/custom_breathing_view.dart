@@ -182,6 +182,7 @@ class _SelectCustomizationState extends State<SelectCustomization> {
           title: const Text('Custom Breathwork'),
           backgroundColor: const Color(0xFFFFCACC),
         ),
+        backgroundColor: const Color.fromARGB(255, 236, 239, 236),
         body: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column( crossAxisAlignment: CrossAxisAlignment.start,
@@ -278,10 +279,14 @@ class _SelectCustomizationState extends State<SelectCustomization> {
                 ),
                 
               ),
-              ElevatedButton(onPressed: () {
+              Align(
+                alignment: Alignment.center,
+                child: ElevatedButton(onPressed: () {
                 Navigator.pop(context);
                   Navigator.push(context, MaterialPageRoute(builder: (context) => CustomBreathingView(timings: [_val1.toInt(),_val2.toInt(),_val3.toInt(),_val4.toInt()])));
-                },child:const Text('Confirm')),
+                },child:const Text('Confirm', style: TextStyle(fontSize: 20))),
+              )
+              
             ],
           ),
         ));

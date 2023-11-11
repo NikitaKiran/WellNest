@@ -8,7 +8,7 @@ class OptionsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Meditate'),
-        backgroundColor: const Color(0xFFFFCACC),
+        backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
       ),
       backgroundColor: const Color.fromARGB(255, 236, 239, 236),
       body: Column(
