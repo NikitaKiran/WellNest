@@ -35,3 +35,6 @@ A single player automation game which where the evolution of game is determined 
 ##Doodle
 Allows users to doodle in various colours.
 
+##Pattern Viewer
+Generates pattern using animation
+
