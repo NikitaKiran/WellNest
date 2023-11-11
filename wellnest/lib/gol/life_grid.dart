@@ -65,8 +65,6 @@ class _LifeGridState extends State<LifeGrid> with TickerProviderStateMixin {
   }
 }
 
-//------------------------------- PAINTER -------------------------------//
-
 class LifeGridPainter extends CustomPainter {
   const LifeGridPainter({
     required this.r,
@@ -170,7 +168,6 @@ class LifeGridPainter extends CustomPainter {
         }
       }
     }
-
     canvas.drawPath(secondPath, secondPaint);
     canvas.drawPath(linePath, paint);
   }

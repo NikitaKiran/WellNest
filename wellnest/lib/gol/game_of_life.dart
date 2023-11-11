@@ -10,7 +10,7 @@ class GameOfLife extends StatefulWidget {
     required this.cellSize,
     this.controlsHeight = 100,
     this.hideControls = false,
-    this.cellsColor = const Color.fromARGB(255, 55, 242, 158),
+    this.cellsColor = const Color.fromARGB(255, 52, 55, 54),
     this.backgroundColor = const Color.fromARGB(221, 0, 0, 0),
     this.gridColor = const Color.fromARGB(31, 255, 255, 255),
     Key? key,

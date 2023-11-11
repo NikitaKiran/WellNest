@@ -157,13 +157,11 @@ class LifeController {
     final newRowCount = cells.length;
     final newColumnCount = cells[0].length;
 
-    // Calculate starting indices for central alignment
     final rowOffset = max(0, (newRowCount - oldRowCount) ~/ 2);
     final columnOffset = max(0, (newColumnCount - oldColumnCount) ~/ 2);
 
     for (var i = 0; i < oldRowCount; i++) {
       for (var j = 0; j < oldColumnCount; j++) {
-        // Make sure indices are within the bounds of the newCells array
         final newRow = i + rowOffset;
         final newColumn = j + columnOffset;
 

@@ -48,7 +48,6 @@ class _PatternViewState extends State<PatternView> {
   }
 }
 
-
 class Art2 extends Funvas {
   @override
   void u(double t, [bool recurse = true]) {
@@ -101,9 +100,7 @@ class Art2 extends Funvas {
 class Art3 extends Funvas  {
   @override
   void u(double t) {
-    //c.drawPaint(Paint()..color = const Color(0xffdddddd));
     c.saveLayer(Offset.zero & Size(x.width, x.height), Paint());
-    //c.drawPaint(Paint()..color = const Color(0xffffffff));
 
     final d = s2q(750).width;
     const r = 7.0, n = 42;
