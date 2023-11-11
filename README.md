@@ -28,7 +28,6 @@ The user gets daily affirmations. Affirmations are provided through an API.
 
 #Relaxation section
 
-
 ##Conway's Game of Life
 A single player automation game which where the evolution of game is determined by its initial stage. Users can select cells by clicking on them and then it will generate a pattern.
 
@@ -36,5 +35,7 @@ A single player automation game which where the evolution of game is determined 
 Allows users to doodle in various colours.
 
 ##Pattern Viewer
-Generates pattern using animation
+Generates pattern using animation.
 
+#Info page
+Contains Description, Symptoms and Treatments of common mental health conditions.
