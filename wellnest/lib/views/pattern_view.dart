@@ -1,17 +1,38 @@
 import 'dart:math';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fractal/flutter_fractal.dart';
 import 'package:wellnest/widgets/viewer.dart';
 import 'package:funvas/funvas.dart';
 
 
-class PatternView extends StatelessWidget {
+class PatternView extends StatefulWidget {
 
   static final examples = <SizedBox>[
     SizedBox(child: FunvasContainer(funvas: Art3())),
     SizedBox(child: const ChakraLoadingIndicator(duration: Duration(seconds: 5),)),
     SizedBox(child: FunvasContainer(funvas: Art2()))
   ];
+
+  @override
+  State<PatternView> createState() => _PatternViewState();
+}
+
+class _PatternViewState extends State<PatternView> {
+  final player = AudioPlayer();
+  @override
+  void initState() {
+    super.initState();
+    player.setSource(AssetSource('music2.mp3'));
+    player.resume();
+  }
+
+  @override
+  void dispose() {
+    player.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +40,7 @@ class PatternView extends StatelessWidget {
           backgroundColor: const Color(0xFFFFCACC),),
       backgroundColor: Colors.black,
       body: Center(
-        child: Viewer(boxes: examples,)
+        child: Viewer(boxes: PatternView.examples,)
       ),
     );
   }

@@ -1,8 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:funvas/funvas.dart';
-
 
 class Viewer extends StatefulWidget {
   const Viewer({
