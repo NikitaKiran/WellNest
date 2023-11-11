@@ -26,3 +26,8 @@ A Journal where you can record you daily events or jot down your thoughts.
 ##Daily affirmations
 The user gets daily affirmations. Affirmations are provided through an API.
 
+#Relaxation section
+
+##Conway's Game of Life
+A single player automation game which where the evolution of game is determined by its initial stage. Users can select cells by clicking on them and then it will generate a pattern.
+
