@@ -41,3 +41,6 @@ Contains Description, Symptoms and Treatments of common mental health conditions
 
 #Meditation Section:-
 Contains a meditation section with various customizable meditation timers with soothing meditation music. 
+
+#Mood Tracker:-
+Tracks users basic 8 moods and displays in the form of piechart.
