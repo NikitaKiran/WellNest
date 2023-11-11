@@ -26,7 +26,7 @@ class RelaxOptionsView extends StatelessWidget {
                   fixedSize: const Size(350, 50),
                   elevation: 4.0
                 ),
-                child: const Center(child: Text("Conway's Game of Life", style: TextStyle(fontSize: 25),)),
+                child: const Center(child: Text("Conway's Game of Life", style: TextStyle(fontSize: 22),)),
               )),
               Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
@@ -39,7 +39,7 @@ class RelaxOptionsView extends StatelessWidget {
                   fixedSize: const Size(350, 50),
                   elevation: 4.0
                 ),
-                child: const Center(child: Text("Doodle", style: TextStyle(fontSize: 25),)),
+                child: const Center(child: Text("Doodle", style: TextStyle(fontSize: 22),)),
               )),
               Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
@@ -52,7 +52,7 @@ class RelaxOptionsView extends StatelessWidget {
                   fixedSize: const Size(350, 50),
                   elevation: 4.0
                 ),
-                child: const Center(child: Text("Pattern Viewer", style: TextStyle(fontSize: 25),)),
+                child: const Center(child: Text("Pattern Viewer", style: TextStyle(fontSize: 22),)),
               )),
         ],
       ),
