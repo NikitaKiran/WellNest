@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wellnest/services/local_auth_service.dart';
 import 'package:wellnest/style/app_style.dart';
 import 'package:wellnest/views/note_editor.dart';
 import 'package:wellnest/views/note_reader.dart';
@@ -16,6 +17,7 @@ class NotesView extends StatefulWidget {
 
 class _NotesViewState extends State<NotesView> {
   final user = FirebaseAuth.instance.currentUser;
+  bool isAuthenticated = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,12 +28,17 @@ class _NotesViewState extends State<NotesView> {
         centerTitle: true,
         backgroundColor: AppStyle.mainColor,
       ),
-      body: Padding(
+      body: 
+      Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
+          
           children: [
+            if (isAuthenticated)
+
+            
             Text(
               "Your recent Notes",
               style: GoogleFonts.roboto(
@@ -39,9 +46,11 @@ class _NotesViewState extends State<NotesView> {
                 fontSize: 22,
               ),
             ),
+             if (isAuthenticated)
             const SizedBox(
               height: 20.0,
             ),
+            if (isAuthenticated)
             Expanded(
               child: StreamBuilder<QuerySnapshot>(
                 stream:
@@ -76,17 +85,26 @@ class _NotesViewState extends State<NotesView> {
                 },
               ),
             ),
+             if (!isAuthenticated) Center(
+               child: OutlinedButton(onPressed: () async{
+                final authenticate = await LocalAuth.authenticate();
+                setState(() {
+                  isAuthenticated = authenticate;
+                });
+               } ,child: Text('Authenticate'),),
+             )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      
+      floatingActionButton: isAuthenticated? FloatingActionButton.extended(
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context)=> const NoteEditorScreen()));
         },
         backgroundColor: const Color.fromRGBO(226, 220, 222, 1),
         label: const Text("Add Note"),
         icon: const Icon(Icons.add),
-      ),
+      ): SizedBox(),
     );
   }
 }

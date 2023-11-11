@@ -49,6 +49,9 @@ dependencies:
   collection:
   funvas:
   flutter_fractal: ^2.0.0
+  local_auth: ^2.1.7
+  local_auth_android:
+  local_auth_ios:
 
 
 dev_dependencies:
