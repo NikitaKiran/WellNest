@@ -10,9 +10,11 @@ class PatternView extends StatefulWidget {
 
   static final examples = <SizedBox>[
     SizedBox(child: FunvasContainer(funvas: Art3())),
-    SizedBox(child: const ChakraLoadingIndicator(duration: Duration(seconds: 5),)),
+    const SizedBox(child: ChakraLoadingIndicator(duration: Duration(seconds: 5),spiralRadius: 50,)),
     SizedBox(child: FunvasContainer(funvas: Art2()))
   ];
+
+  const PatternView({super.key});
 
   @override
   State<PatternView> createState() => _PatternViewState();
