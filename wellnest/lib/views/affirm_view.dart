@@ -84,6 +84,49 @@ class _AffirmPageState extends State<AffirmPage> {
             return Center(child: const CircularProgressIndicator());
           },
         ),
+        bottomNavigationBar: BottomAppBar(
+        color: const Color.fromRGBO(226, 220, 222, 1),
+        elevation: 2.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                    .pushNamed('/home/');
+                  },
+                  icon: const Icon(
+                    Icons.home,
+                    size: 50,
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: IconButton(
+                  onPressed: () {
+                  },
+                  icon: const Icon(
+                    Icons.edit_note,
+                    size: 50,
+                  )),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                    .pushNamed('/pie_chart/');
+                  },
+                  icon: const Icon(
+                    Icons.pie_chart_rounded,
+                    size: 45,
+                  )),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
