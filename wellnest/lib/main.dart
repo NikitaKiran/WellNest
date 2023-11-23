@@ -23,6 +23,7 @@ import 'firebase_options.dart';
 import 'views/verify_email_view.dart';
 import 'views/info_view.dart';
 import 'views/piechart_view.dart';
+import 'views/ablog.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -57,7 +58,8 @@ void main() {
       '/quiz/':(context) => const QuizScreen(),
       '/info/':(context) =>  MentalHealthInfoScreen(),
       '/pie_chart/': (context) => const PiechartScreen(),
-      '/pattern/':(context) =>   PatternView(),
+      '/pattern/':(context) =>  const PatternView(),
+      '/ablog/':(context) => const BlogPage(),
     },
   ));
 }

@@ -78,7 +78,9 @@ class RelaxOptionsView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: IconButton(
                   onPressed: () {
-                  },
+                    Navigator.of(context)
+                    .pushNamed('/ablog/');
+                    },
                   icon: const Icon(
                     Icons.edit_note,
                     size: 50,

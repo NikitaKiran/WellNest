@@ -261,7 +261,10 @@ class _HomeViewState extends State<HomeView> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                    .pushNamed('/ablog/');
+                    },
                   icon: const Icon(
                     Icons.edit_note,
                     size: 50,
